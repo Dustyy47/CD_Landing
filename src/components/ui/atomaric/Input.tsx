@@ -14,6 +14,7 @@ export function Input({
   isValid,
   label,
   baseIconType,
+  isRequired,
   ...props
 }: InputProps) {
   const baseInputGroupStyles =
@@ -22,11 +23,18 @@ export function Input({
 
   return (
     <div>
+      <label className='block mb-2 subtitle2'>
+        {label}
+        <span className={isRequired ? 'text-lavenderRed' : 'opacity-0'}>
+          {' '}
+          *
+        </span>
+      </label>
       <div className={classNames(baseInputGroupStyles, stateInputGroupStyles)}>
         <InputIcon iconType={baseIconType} />
         <input
           {...props}
-          className='w-full ml-[0.75rem]  '
+          className='w-full ml-3 '
           type='text'
           placeholder='name@example.com'
         />
