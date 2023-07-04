@@ -15,11 +15,16 @@ export function Input({
   label,
   baseIconType,
   isRequired,
+  disabled,
   ...props
 }: InputProps) {
   const baseInputGroupStyles =
     'flex w-full py-[0.8125rem] px-[1.25rem] rounded-2xl border-[0.08rem] border-greyLight'
-  const stateInputGroupStyles = isValid ? '' : 'border-lavenderRed'
+  const stateInputGroupStyles = disabled
+    ? 'bg-greyLight border-none'
+    : isValid
+    ? ''
+    : 'border-lavenderRed'
 
   return (
     <div>
@@ -33,8 +38,9 @@ export function Input({
       <div className={classNames(baseInputGroupStyles, stateInputGroupStyles)}>
         <InputIcon iconType={baseIconType} />
         <input
+          disabled={disabled}
           {...props}
-          className='w-full ml-3 '
+          className='w-full ml-3 bg-[transparent] text-black'
           type='text'
           placeholder='name@example.com'
         />
