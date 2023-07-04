@@ -4,7 +4,20 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    colors: {
+      black: '#27272A',
+      greyDark: '#696969',
+      greyLight: '#E5E7EB',
+      lavenderPurple: '#7E3AF2',
+      lavenderPurpleDark: '#6C2BD9',
+      lavenderPurpleLight: '#CABFFD',
+      lavenderRed: '#E02424',
+      white: 'white',
+    },
+    fontFamily: {
+      main: 'Montserrat'
+    },
+    external: {}
   },
   plugins: [],
 }
