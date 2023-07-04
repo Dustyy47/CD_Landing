@@ -10,6 +10,9 @@ module.exports = {
       lavenderPurple: '#7E3AF2',
       lavenderRed: '#E02424'
     },
+    fontFamily: {
+      main: 'Montserrat'
+    },
   },
   plugins: [],
 }
