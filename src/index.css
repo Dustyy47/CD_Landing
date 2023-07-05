@@ -10,7 +10,8 @@ body {
 }
 
 *{
-  @apply font-main text-black
+  box-sizing: border-box;
+  @apply font-main text-black 
 }
 
 .h1{
