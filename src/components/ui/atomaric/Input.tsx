@@ -6,8 +6,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   value: string
   setValue: (value: string) => void
   baseIconType: InputIconType
-  label: string
-  isRequired?: boolean
   isValid?: boolean
   errorMessage?: string
 }
@@ -17,9 +15,7 @@ export function Input({
   setValue,
   type,
   isValid = true,
-  label,
   baseIconType,
-  isRequired = false,
   disabled = false,
   placeholder = '',
   errorMessage = '',
@@ -34,16 +30,8 @@ export function Input({
   )
 
   const iconType: InputIconType = isValid ? baseIconType : 'error'
-
   return (
     <div>
-      <label className='block mb-2 subtitle2'>
-        {label}
-        <span className={isRequired ? 'text-lavenderRed' : 'opacity-0'}>
-          {' '}
-          *
-        </span>
-      </label>
       <div className={classNames(baseInputGroupStyles, stateInputGroupStyles)}>
         <input
           onChange={(e) => setValue(e.target.value)}
