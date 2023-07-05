@@ -40,3 +40,8 @@ body {
 .bodyText2{
   @apply font-medium text-[1rem]
 }
+
+.container{
+  width:69.375rem;
+  margin: 0 auto;
+}
