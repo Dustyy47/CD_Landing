@@ -17,7 +17,11 @@ module.exports = {
     fontFamily: {
       main: 'Montserrat'
     },
-    external: {}
+    extend: {
+      backgroundImage: {
+        discuss : "url('../public/images/back.png')",
+      }
+    }
   },
   plugins: [],
 }

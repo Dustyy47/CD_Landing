@@ -26,7 +26,8 @@ export function Input({
   const stateInputGroupStyles = classNames(
     disabled && 'border-greyLight bg-greyLight border-none',
     !isValid && 'border-greyLight border-lavenderRed',
-    isValid && 'focus-within:border-lavenderPurple hover:border-lavenderPurple'
+    isValid &&
+      'border-greyLight focus-within:border-lavenderPurple hover:border-lavenderPurple'
   )
 
   const iconType: InputIconType = isValid ? baseIconType : 'error'
@@ -44,7 +45,14 @@ export function Input({
         />
         <InputIcon isActive={value !== ''} iconType={iconType} />
       </div>
-      <p className='subtitle2 text-lavenderRed'>{errorMessage}</p>
+      <p
+        className={classNames(
+          'duration-300 subtitle2 text-lavenderRed opacity-1',
+          errorMessage ?? 'opacity-100'
+        )}
+      >
+        {'Error'}
+      </p>
     </div>
   )
 }

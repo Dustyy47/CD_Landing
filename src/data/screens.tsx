@@ -57,5 +57,12 @@ export const screensData = {
         subtitle: 'Saint Petersburg State University'
       }
     ]
+  },
+  discuss: {
+    title: 'Let’s discuss your project',
+    buttonText: 'Submit',
+    fullnameLabel: 'Your fullname',
+    emailLabel: 'Your email',
+    textareaLabel: 'Tell me about your project'
   }
 }
