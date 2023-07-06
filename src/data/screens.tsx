@@ -19,6 +19,43 @@ export const screensData = {
         negotiations
       </>
     ),
-    buttonText: 'Get in touch'
+    buttonText: 'Get in touch',
+    interests: [
+      {
+        iconSrc: './images/Music.svg',
+        title: 'Music',
+        subtitle: 'Indie rock | Reggae'
+      },
+      {
+        iconSrc: './images/Art.svg',
+        title: 'Art',
+        subtitle: 'Edvard Munch | Frida Kahlo'
+      },
+      {
+        iconSrc: './images/Photography.svg',
+        title: 'Photography',
+        subtitle: 'Portraits'
+      }
+    ],
+    story: [
+      {
+        start: '2008',
+        end: 'Present',
+        title: 'Middle Frontend developer',
+        subtitle: 'Ozon'
+      },
+      {
+        start: '2006',
+        end: '2007',
+        title: 'Frontend development courses',
+        subtitle: 'Stepik'
+      },
+      {
+        start: '2000',
+        end: '2005',
+        title: 'Frontend developer',
+        subtitle: 'Saint Petersburg State University'
+      }
+    ]
   }
 }
