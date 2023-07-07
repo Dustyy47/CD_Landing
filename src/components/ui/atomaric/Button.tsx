@@ -24,13 +24,11 @@ export function Button({ children, disabled, href, ...props }: ButtonProps) {
   )
 
   return (
-    <button className='w-full' {...props}>
-      <a href={href} className={classNames(baseStyles, stateButtonStyles)}>
-        <p className={textStyles}>{children as string}</p>
-        <SendIcon
-          classname={classNames(baseSendIconStyles, stateSendIconStyles)}
-        />
-      </a>
+    <button className={classNames(baseStyles, stateButtonStyles)} {...props}>
+      <p className={textStyles}>{children as string}</p>
+      <SendIcon
+        classname={classNames(baseSendIconStyles, stateSendIconStyles)}
+      />
     </button>
   )
 }
