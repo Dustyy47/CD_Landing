@@ -46,6 +46,6 @@ body {
 }
 
 .container{
-  width:69.375rem;
   margin: 0 auto;
+  @apply lg:w-[69.375rem] md:w-[44.625rem]
 }
