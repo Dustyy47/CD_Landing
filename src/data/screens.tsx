@@ -63,6 +63,10 @@ export const screensData = {
     buttonText: 'Submit',
     fullnameLabel: 'Your fullname',
     emailLabel: 'Your email',
-    textareaLabel: 'Tell me about your project'
+    textareaLabel: 'Tell me about your project',
+    fullnamePlaceholder: 'Name Surname',
+    emailPlaceholder: 'name@example.com',
+    textAreaPlaceholder:
+      'Add here a general description of your idea and target aim'
   }
 }

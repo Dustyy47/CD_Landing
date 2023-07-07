@@ -6,8 +6,16 @@ import { Label } from '../ui/atomaric/Label'
 import { Textarea } from '../ui/atomaric/Textarea'
 
 export function DiscussScreen() {
-  const { title, buttonText, emailLabel, fullnameLabel, textareaLabel } =
-    screensData.discuss
+  const {
+    title,
+    buttonText,
+    emailLabel,
+    fullnameLabel,
+    textareaLabel,
+    emailPlaceholder,
+    textAreaPlaceholder,
+    fullnamePlaceholder
+  } = screensData.discuss
 
   const [v, setV] = useState('')
   return (
@@ -20,16 +28,30 @@ export function DiscussScreen() {
         <div className='flex justify-between'>
           <div>
             <Label isRequired>{fullnameLabel}</Label>
-            <Input value={v} setValue={setV} baseIconType='personal' />
+            <Input
+              value={v}
+              setValue={setV}
+              placeholder={fullnamePlaceholder}
+              baseIconType='personal'
+            />
           </div>
           <div>
             <Label isRequired>{emailLabel}</Label>
-            <Input value={v} setValue={setV} baseIconType='email' />
+            <Input
+              value={v}
+              placeholder={emailPlaceholder}
+              setValue={setV}
+              baseIconType='email'
+            />
           </div>
         </div>
-        <div>
+        <div className='mb-12'>
           <Label>{textareaLabel}</Label>
-          <Textarea value={v} setValue={setV} />
+          <Textarea
+            placeholder={textAreaPlaceholder}
+            value={v}
+            setValue={setV}
+          />
         </div>
         <div className='w-[9.1875rem]'>
           <Button>{buttonText}</Button>
