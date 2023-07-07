@@ -25,6 +25,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         nickMainLg: "url(../public/images/photo.png)",
+        nickMainMd: "url(../public/images/photo-md.png)",
         discuss : "url('../public/images/back.png')",
       }
     }

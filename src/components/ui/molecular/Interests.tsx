@@ -21,8 +21,8 @@ export function Interests({ interests }: InterestsProps) {
             />
           </div>
           <div>
-            <p className='subtitle'>{interest.subtitle}</p>
-            <p className='bodyText'>{interest.title}</p>
+            <p className='subtitle'>{interest.title}</p>
+            <p className='bodyText'>{interest.subtitle}</p>
           </div>
         </div>
       ))}
