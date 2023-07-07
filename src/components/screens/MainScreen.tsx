@@ -9,18 +9,18 @@ export function MainScreen() {
   return (
     <section
       id='main'
-      className='lg:h-[48.125rem] md:h-[28.5rem] lg:w-[1280px] md:w-[792px] mx-auto lg:bg-nickMainLg bg-no-repeat bg-right md:bg-nickMainMd'
+      className='lg:h-[48.125rem] md:h-[28.5rem] sm:h-[31.5rem] lg:w-[1280px] md:w-[792px] sm:w-[320px] mx-auto bg-no-repeat md:bg-right lg:bg-nickMainLg md:bg-nickMainMd sm:bg-nickMainSm sm:bg-bottom'
     >
       <div className='container h-full z-50'>
-        <div className='lg:w-[27.8125rem] md:w-[27.8125rem] lg:pt-40 md:pt-11'>
-          <h1 className='h1'>{title}</h1>
-          <p className='bodyText text-greyDark lg:mb-[5.75rem] md:mb-9'>
+        <div className='lg:w-[27.8125rem] md:w-[27.8125rem] lg:pt-40 md:pt-11 sm:pt-[1.6875rem]'>
+          <h1 className='lg:h1 md:h1 sm:mob_h1'>{title}</h1>
+          <p className='lg:bodyText md:bodyText sm:mob_bodyText text-greyDark lg:mb-[5.75rem] md:mb-9 sm:mb-[2.375rem]'>
             {subtitle}
           </p>
-          <div className='lg:mb-[3.75rem] md:mb-11'>
+          <div className='lg:mb-[3.75rem] md:mb-11 sm:mb-[1.6875rem]'>
             <Article>{article}</Article>
           </div>
-          <div className='w-48'>
+          <div className='md:w-48 sm:w-[8.75rem]'>
             <Link href='#discuss'>{buttonText}</Link>
           </div>
         </div>
