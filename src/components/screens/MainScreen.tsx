@@ -1,5 +1,4 @@
 import { screensData } from '../../data/screens'
-import { Button } from '../ui/atomaric/Button'
 import { Link } from '../ui/atomaric/Link'
 import { Article } from '../ui/molecular/Article'
 
@@ -24,19 +23,6 @@ export function MainScreen() {
             <Link href='#discuss'>{buttonText}</Link>
           </div>
         </div>
-
-        {/* <div>
-          <img
-            className='lg:hidden md:block z-0 '
-            src='./images/photo-md.png'
-            alt='main'
-          />
-          <img
-            className='z-0  lg:block md:hidden'
-            src='./images/photo.png'
-            alt='main'
-          />
-        </div> */}
       </div>
     </section>
   )

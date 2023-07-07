@@ -14,7 +14,7 @@ export function Link({ href, children }: LinkProps) {
       <p className='md:subtitle2 sm:mob_subtitle2 text-white'>
         {children as string}
       </p>
-      <SendIcon classname='f md:w-[1.5rem] sm:w-[1rem] fill-white stroke-lavenderPurple' />
+      <SendIcon classname='f md:w-[1.5rem] sm:w-[1.1rem] fill-white stroke-lavenderPurple' />
     </a>
   )
 }

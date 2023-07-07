@@ -1,11 +1,11 @@
 import { navlinks } from '../../../data/links'
-import { Navbar } from './Navbar'
 import { Logo } from '../icons/Logo'
+import { Navbar } from './Navbar'
 
 export function Header() {
   return (
-    <div className='h-16 w-full border-b-[0.08125rem] border-greyLight'>
-      <div className='container h-full flex justify-between items-center'>
+    <div className='sticky top-0 bg-white h-16 w-full border-b-[0.08125rem] border-greyLight'>
+      <div className='container h-full flex justify-between items-center relative'>
         <Logo />
         <Navbar links={navlinks} />
       </div>

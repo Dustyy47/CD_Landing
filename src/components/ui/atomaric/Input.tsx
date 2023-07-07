@@ -50,7 +50,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         </div>
         <p
           className={classNames(
-            'duration-0 subtitle2 text-lavenderRed opacity-1 mb-4',
+            'duration-0 md:subtitle2 sm:text-[0.75rem] sm:font-semibold text-lavenderRed opacity-1',
             errorMessage ? 'opacity-100' : 'opacity-0'
           )}
         >
