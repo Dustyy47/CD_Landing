@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -42,6 +46,6 @@ body {
 }
 
 .container{
-  width:69.375rem;
   margin: 0 auto;
+  @apply lg:w-[69.375rem] md:w-[44.625rem]
 }

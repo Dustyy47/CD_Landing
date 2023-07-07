@@ -4,6 +4,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      lg: '1280px',
+      md: '792px',
+      sm: '320px',
+    },
     colors: {
       black: '#27272A',
       greyDark: '#696969',
@@ -19,6 +24,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
+        nickMainLg: "url(../public/images/photo.png)",
+        nickMainMd: "url(../public/images/photo-md.png)",
         discuss : "url('../public/images/back.png')",
       }
     }

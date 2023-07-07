@@ -1,5 +1,6 @@
 import { screensData } from '../../data/screens'
 import { Button } from '../ui/atomaric/Button'
+import { Link } from '../ui/atomaric/Link'
 import { Article } from '../ui/molecular/Article'
 import { Interests } from '../ui/molecular/Interests'
 import { Story } from '../ui/molecular/Story'
@@ -13,24 +14,28 @@ export function AboutScreen() {
 
       <div className='flex items-center'>
         <div className='w-[50%]'>
-          <img src='./images/photo-circle.png' alt='' />
+          <img
+            className='lg:w-auto md:w-[18rem] '
+            src='./images/photo-circle.png'
+            alt=''
+          />
         </div>
         <div className='w-[50%]'>
-          <div className='w-[26rem]'>
+          <div className='lg:w-[26rem] md:w-auto'>
             <Article>{article}</Article>
             <div className='w-48 mt-[4rem]'>
-              <Button>{buttonText}</Button>
+              <Link href='#discuss'>{buttonText}</Link>
             </div>
           </div>
         </div>
       </div>
 
-      <div className='mt-[5rem] flex '>
-        <div className='w-[50%]'>
+      <div className='mt-[5rem] lg:mb-[7rem] flex lg:flex-row md:flex-col'>
+        <div className='w-[50%] lg:mb-0 md:mb-20'>
           <h3 className='h3 mb-11'>Interests</h3>
           <Interests interests={interests} />
         </div>
-        <div className='w-[50%]'>
+        <div className='lg:mb-0 md:mb-[8.125rem] lg:w-[50%] md:w-full'>
           <h3 className='h3 mb-11'>Education & Experience</h3>
           <Story items={story} />
         </div>
