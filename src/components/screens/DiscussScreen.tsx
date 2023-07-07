@@ -19,7 +19,10 @@ export function DiscussScreen() {
 
   const [v, setV] = useState('')
   return (
-    <div className='bg-discuss w-full h-[44.25rem] bg-cover flex items-center justify-center'>
+    <div
+      id='discuss'
+      className='bg-discuss w-full h-[44.25rem] bg-cover flex items-center justify-center'
+    >
       <form
         className='w-[47.75rem] h-[35.4375rem] p-12 bg-white rounded-[1rem] '
         action=''

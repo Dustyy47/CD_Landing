@@ -1,5 +1,6 @@
 import { screensData } from '../../data/screens'
 import { Button } from '../ui/atomaric/Button'
+import { Link } from '../ui/atomaric/Link'
 import { Article } from '../ui/molecular/Article'
 import { Interests } from '../ui/molecular/Interests'
 import { Story } from '../ui/molecular/Story'
@@ -19,7 +20,7 @@ export function AboutScreen() {
           <div className='w-[26rem]'>
             <Article>{article}</Article>
             <div className='w-48 mt-[4rem]'>
-              <Button>{buttonText}</Button>
+              <Link href='#discuss'>{buttonText}</Link>
             </div>
           </div>
         </div>

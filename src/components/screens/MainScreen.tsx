@@ -1,5 +1,6 @@
 import { screensData } from '../../data/screens'
 import { Button } from '../ui/atomaric/Button'
+import { Link } from '../ui/atomaric/Link'
 import { Article } from '../ui/molecular/Article'
 
 export function MainScreen() {
@@ -15,7 +16,7 @@ export function MainScreen() {
             <Article>{article}</Article>
           </div>
           <div className='w-48'>
-            <Button>{buttonText}</Button>
+            <Link href='#discuss'>{buttonText}</Link>
           </div>
         </div>
       </div>
