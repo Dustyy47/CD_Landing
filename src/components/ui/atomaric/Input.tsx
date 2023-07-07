@@ -47,8 +47,8 @@ export function Input({
       </div>
       <p
         className={classNames(
-          'duration-300 subtitle2 text-lavenderRed opacity-1',
-          errorMessage ?? 'opacity-100'
+          'duration-300 subtitle2 text-lavenderRed opacity-1 mb-4',
+          errorMessage ? 'opacity-100' : 'opacity-0'
         )}
       >
         {'Error'}
