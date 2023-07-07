@@ -4,6 +4,20 @@ import { Button } from '../ui/atomaric/Button'
 import { Input } from '../ui/atomaric/Input'
 import { Label } from '../ui/atomaric/Label'
 import { Textarea } from '../ui/atomaric/Textarea'
+import {
+  Controller,
+  Field,
+  FieldError,
+  SubmitHandler,
+  useForm
+} from 'react-hook-form'
+import { getFieldErrorText, isValidEmail } from '../../helpers/validations'
+
+interface DiscussFields {
+  fullname: string
+  email: string
+  description: string
+}
 
 export function DiscussScreen() {
   const {
@@ -17,7 +31,18 @@ export function DiscussScreen() {
     fullnamePlaceholder
   } = screensData.discuss
 
-  const [v, setV] = useState('')
+  const {
+    register,
+    handleSubmit,
+    watch,
+    control,
+    formState: { errors, isValid }
+  } = useForm<DiscussFields>({ mode: 'onBlur' })
+
+  const onSubmit: SubmitHandler<DiscussFields> = (data) => console.log(data)
+
+  console.log(errors, isValid)
+
   return (
     <div
       id='discuss'
@@ -25,39 +50,49 @@ export function DiscussScreen() {
     >
       <form
         className='w-[47.75rem] h-[35.4375rem] p-12 bg-white rounded-[1rem] '
-        action=''
+        onSubmit={handleSubmit(onSubmit)}
       >
         <h2 className='h2 mb-12'>{title}</h2>
         <div className='flex justify-between'>
           <div>
             <Label isRequired>{fullnameLabel}</Label>
             <Input
-              value={v}
-              setValue={setV}
+              {...register('fullname', {
+                required: true
+              })}
               placeholder={fullnamePlaceholder}
               baseIconType='personal'
+              errorMessage={getFieldErrorText(errors.fullname)}
             />
           </div>
           <div>
             <Label isRequired>{emailLabel}</Label>
             <Input
-              value={v}
+              {...register('email', {
+                required: true,
+                validate: isValidEmail
+              })}
               placeholder={emailPlaceholder}
-              setValue={setV}
               baseIconType='email'
+              errorMessage={getFieldErrorText(
+                errors.email,
+                'Incorrect email type'
+              )}
             />
           </div>
         </div>
         <div className='mb-12'>
           <Label>{textareaLabel}</Label>
-          <Textarea
-            placeholder={textAreaPlaceholder}
-            value={v}
-            setValue={setV}
-          />
+          <Controller
+            render={() => <Textarea placeholder={textAreaPlaceholder} />}
+            name='description'
+            control={control}
+          ></Controller>
         </div>
         <div className='w-[9.1875rem]'>
-          <Button>{buttonText}</Button>
+          <Button disabled={!isValid} type='submit'>
+            {buttonText}
+          </Button>
         </div>
       </form>
     </div>
