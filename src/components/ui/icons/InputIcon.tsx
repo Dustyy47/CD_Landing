@@ -8,7 +8,6 @@ interface InputIconProps {
 }
 
 export function InputIcon({ iconType, isActive = false }: InputIconProps) {
-  console.log(isActive)
   const baseStyles = classNames(
     'w-[1.5rem] duration-300 peer-focus:fill-lavenderPurple fill-greyDark',
     isActive && ' fill-lavenderPurple'
