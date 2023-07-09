@@ -27,14 +27,11 @@ export function DiscussScreen() {
   const {
     register,
     handleSubmit,
-    watch,
     control,
     formState: { errors, isValid }
   } = useForm<DiscussFields>({ mode: 'onBlur' })
 
   const onSubmit: SubmitHandler<DiscussFields> = (data) => console.log(data)
-
-  console.log(errors, isValid)
 
   return (
     <div
@@ -77,7 +74,9 @@ export function DiscussScreen() {
         <div className='mb-12'>
           <Label>{textareaLabel}</Label>
           <Controller
-            render={() => <Textarea placeholder={textAreaPlaceholder} />}
+            render={({ field }) => (
+              <Textarea {...field} placeholder={textAreaPlaceholder} />
+            )}
             name='description'
             control={control}
           ></Controller>

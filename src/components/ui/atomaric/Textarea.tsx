@@ -5,7 +5,7 @@ interface TextareaProps
   extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'ref'> {}
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ disabled, placeholder }: TextareaProps, ref) => {
+  ({ disabled, placeholder, ...rest }: TextareaProps, ref) => {
     const baseStyles =
       'w-full resize-none duration-300 bodyText2 text-black py-[0.8125rem] px-5 placeholder:greyDark rounded-2xl h-[7.625rem] border-[0.08125rem] border-greyLight'
     const stateStyles = classNames(
@@ -16,6 +16,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 
     return (
       <textarea
+        {...rest}
         disabled={disabled}
         placeholder={placeholder}
         className={classNames(baseStyles, stateStyles)}
