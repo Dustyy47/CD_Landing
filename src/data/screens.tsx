@@ -23,6 +23,7 @@ export const screensData: Record<Language, any> = {
         </>
       ),
       buttonText: 'Get in touch',
+      interestsTitle: 'Interests',
       interests: [
         {
           iconSrc: './images/Music.svg',
@@ -40,6 +41,7 @@ export const screensData: Record<Language, any> = {
           subtitle: 'Portraits'
         }
       ],
+      storyTitle: 'Education & Experience',
       story: [
         {
           start: '2008',
@@ -71,19 +73,22 @@ export const screensData: Record<Language, any> = {
       emailPlaceholder: 'name@example.com',
       textAreaPlaceholder:
         'Add here a general description of your idea and target aim'
+    },
+    footer: {
+      copyright: '© 2022 JetRuby. All Rights Reserved'
     }
   },
   ru: {
     main: {
-      title: 'Привет, я Ник!',
+      title: 'Хэй, я Ник!',
       subtitle: 'Frontend разработчик',
       article: (
         <>
           Помогу вам создавать высококачественные цифровые продукты, которые
-          понравятся вашим клиентам и позволят вашему бизнесу процветать.
+          понравятся вашим клиентам.
         </>
       ),
-      buttonText: 'Связаться со мной'
+      buttonText: 'Связаться'
     },
     aboutMe: {
       title: 'Обо мне',
@@ -93,7 +98,8 @@ export const screensData: Record<Language, any> = {
           Frontend. Чистый код - моя страсть. Решение проблем через переговоры.
         </>
       ),
-      buttonText: 'Связаться со мной',
+      buttonText: 'Связаться',
+      interestsTitle: 'Хобби',
       interests: [
         {
           iconSrc: './images/Music.svg',
@@ -111,10 +117,11 @@ export const screensData: Record<Language, any> = {
           subtitle: 'Портреты'
         }
       ],
+      storyTitle: 'Образование И Опыт',
       story: [
         {
           start: '2008',
-          end: 'настоящее время',
+          end: 'н.в',
           title: 'Middle Frontend developer',
           subtitle: 'Ozon'
         },
@@ -141,6 +148,9 @@ export const screensData: Record<Language, any> = {
       fullnamePlaceholder: 'Имя Фамилия',
       emailPlaceholder: 'name@example.com',
       textAreaPlaceholder: 'Добавьте общее описание вашей идеи и цели'
+    },
+    footer: {
+      copyright: '© 2022 JetRuby. Все права защищены'
     }
   }
 }

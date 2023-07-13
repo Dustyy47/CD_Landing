@@ -22,7 +22,7 @@ export function Story({ items }: StoryProps) {
             </p>
           </div>
 
-          <div>
+          <div className='w-[70%]'>
             <p className='md:subtitle sm:mob_subtitle2'>{item.title}</p>
             <p className='md:bodyText sm:mob_bodyText'>{item.subtitle}</p>
           </div>

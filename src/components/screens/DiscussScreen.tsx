@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { DEFAULT_LANGUAGE, LanguageContext } from '../../App'
 import { screensData } from '../../data/screens'
+import { validationLabels } from '../../data/validationLabels'
 import { getFieldErrorText, isValidEmail } from '../../helpers/validations'
 import { Button } from '../ui/atomaric/Button'
 import { Input } from '../ui/atomaric/Input'
@@ -55,7 +56,10 @@ export function DiscussScreen() {
               })}
               placeholder={fullnamePlaceholder}
               baseIconType='personal'
-              errorMessage={getFieldErrorText(errors.fullname)}
+              errorMessage={getFieldErrorText(
+                errors.fullname,
+                ctx?.lang ?? DEFAULT_LANGUAGE
+              )}
             />
           </div>
           <div className='md:mb-4 sm:mb-4'>
@@ -69,7 +73,8 @@ export function DiscussScreen() {
               baseIconType='email'
               errorMessage={getFieldErrorText(
                 errors.email,
-                'Incorrect email type'
+                ctx?.lang ?? DEFAULT_LANGUAGE,
+                validationLabels[ctx?.lang ?? DEFAULT_LANGUAGE].emailType
               )}
             />
           </div>

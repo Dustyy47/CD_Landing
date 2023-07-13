@@ -19,7 +19,7 @@ export function Navbar({ links }: NavbarProps) {
   const baseSideMenuStyles =
     'duration-300 flex flex-col bg-greyLight rounded-[1rem] p-[.5rem] absolute right-[-.5rem] top-[-.5rem] w-[14rem] z-0'
   const stateSideMenuStyles = isSideMenuOpen
-    ? 'h-[8rem] opacity-100'
+    ? 'h-auto opacity-100'
     : 'h-0 opacity-0 pointer-events-none'
 
   return (
@@ -58,10 +58,12 @@ export function Navbar({ links }: NavbarProps) {
               {link.text}
             </a>
           ))}
-          <LanguageSwitch
-            value={ctx?.lang ?? DEFAULT_LANGUAGE}
-            onChange={(v) => ctx?.setLang?.(v)}
-          />
+          <div className='[&>div]:text-lg'>
+            <LanguageSwitch
+              value={ctx?.lang ?? DEFAULT_LANGUAGE}
+              onChange={(v) => ctx?.setLang?.(v)}
+            />
+          </div>
         </nav>
       </div>
     </>

@@ -8,8 +8,15 @@ import { Story } from '../ui/molecular/Story'
 
 export function AboutScreen() {
   const ctx = useContext(LanguageContext)
-  const { title, article, buttonText, interests, story } =
-    screensData[ctx?.lang ?? DEFAULT_LANGUAGE].aboutMe
+  const {
+    title,
+    article,
+    buttonText,
+    interests,
+    story,
+    interestsTitle,
+    storyTitle
+  } = screensData[ctx?.lang ?? DEFAULT_LANGUAGE].aboutMe
 
   return (
     <div id='about' className='container'>
@@ -36,17 +43,19 @@ export function AboutScreen() {
 
       <div className='md:mt-[5rem] sm:mt-12 lg:mb-[7rem]  flex lg:flex-row sm:flex-col'>
         <div className='lg:w-[50%] lg:mb-0 md:mb-20 sm:mb-[3rem]'>
-          <h3 className='md:h3 md:mb-11 sm:mb-7 sm:mob_subtitle'>Interests</h3>
+          <h3 className='md:h3 md:mb-11 sm:mb-7 sm:mob_subtitle'>
+            {interestsTitle}
+          </h3>
           <Interests interests={interests} />
         </div>
         <div className='lg:mb-0 md:mb-[8.125rem] lg:w-[50%] md:w-full'>
           <h3 className='md:h3 sm:mob_subtitle md:mb-11 sm:mb-7'>
-            Education & Experience
+            {storyTitle}
           </h3>
           <Story items={story} />
         </div>
       </div>
-      <div className='md:w-48 sm:w-[8.75rem] md:hidden sm:visible mt-12 mb-[6.25rem]'>
+      <div className='md:w-48  md:hidden sm:visible mt-12 mb-[6.25rem]'>
         <Link href='#discuss'>{buttonText}</Link>
       </div>
     </div>

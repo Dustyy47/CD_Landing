@@ -2,6 +2,7 @@ import { createContext, useState } from 'react'
 import { AboutScreen } from './components/screens/AboutScreen'
 import { DiscussScreen } from './components/screens/DiscussScreen'
 import { MainScreen } from './components/screens/MainScreen'
+import { Footer } from './components/ui/molecular/Footer'
 import { Header } from './components/ui/molecular/Header'
 
 interface ILanguageContext {
@@ -23,6 +24,7 @@ function App() {
       <MainScreen />
       <AboutScreen />
       <DiscussScreen />
+      <Footer />
     </LanguageContext.Provider>
   )
 }
