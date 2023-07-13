@@ -1,6 +1,6 @@
+import classNames from 'classnames'
 import { ButtonHTMLAttributes } from 'react'
 import { SendIcon } from '../icons/SendIcon'
-import classNames from 'classnames'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string
@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button({ children, disabled, href, ...props }: ButtonProps) {
   const baseStyles =
-    'border-[3px] border-[transparent] flex items-center justify-between py-[0.8125rem] px-[1.5rem] h-[3.125rem] w-full rounded-[3.125rem]  duration-300'
+    'border-[3px] border-[transparent] flex items-center justify-between py-[0.8125rem] px-[1.5rem] h-[3.125rem]  rounded-[3.125rem] w-fit  duration-300'
   const stateButtonStyles = disabled
     ? 'bg-greyLight text-greyDark cursor-not-allowed'
     : 'hover:bg-lavenderPurpleDark active:border-lavenderPurpleLight bg-lavenderPurple'
@@ -19,7 +19,7 @@ export function Button({ children, disabled, href, ...props }: ButtonProps) {
     : 'fill-white stroke-lavenderPurple'
 
   const textStyles = classNames(
-    'subtitle2',
+    'subtitle2 mr-3',
     disabled ? 'text-greyDark' : 'text-white'
   )
 

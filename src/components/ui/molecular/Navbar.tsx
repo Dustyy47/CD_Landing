@@ -1,5 +1,7 @@
 import classNames from 'classnames'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { DEFAULT_LANGUAGE, LanguageContext } from '../../../App'
+import { LanguageSwitch } from '../atomaric/LanguageSwitch'
 import { BurgerMenu } from '../icons/BurgerMenu'
 
 export interface NavbarLink {
@@ -13,6 +15,7 @@ interface NavbarProps {
 
 export function Navbar({ links }: NavbarProps) {
   const [isSideMenuOpen, setSideMenuOpen] = useState(false)
+  const ctx = useContext(LanguageContext)
   const baseSideMenuStyles =
     'duration-300 flex flex-col bg-greyLight rounded-[1rem] p-[.5rem] absolute right-[-.5rem] top-[-.5rem] w-[14rem] z-0'
   const stateSideMenuStyles = isSideMenuOpen
@@ -31,6 +34,10 @@ export function Navbar({ links }: NavbarProps) {
             {link.text}
           </a>
         ))}
+        <LanguageSwitch
+          value={ctx?.lang ?? DEFAULT_LANGUAGE}
+          onChange={(v) => ctx?.setLang?.(v)}
+        />
       </nav>
 
       <div
@@ -51,6 +58,10 @@ export function Navbar({ links }: NavbarProps) {
               {link.text}
             </a>
           ))}
+          <LanguageSwitch
+            value={ctx?.lang ?? DEFAULT_LANGUAGE}
+            onChange={(v) => ctx?.setLang?.(v)}
+          />
         </nav>
       </div>
     </>

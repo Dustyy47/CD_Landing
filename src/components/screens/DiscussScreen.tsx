@@ -1,4 +1,6 @@
+import { useContext } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import { DEFAULT_LANGUAGE, LanguageContext } from '../../App'
 import { screensData } from '../../data/screens'
 import { getFieldErrorText, isValidEmail } from '../../helpers/validations'
 import { Button } from '../ui/atomaric/Button'
@@ -13,6 +15,7 @@ interface DiscussFields {
 }
 
 export function DiscussScreen() {
+  const ctx = useContext(LanguageContext)
   const {
     title,
     buttonText,
@@ -22,7 +25,7 @@ export function DiscussScreen() {
     emailPlaceholder,
     textAreaPlaceholder,
     fullnamePlaceholder
-  } = screensData.discuss
+  } = screensData[ctx?.lang ?? DEFAULT_LANGUAGE].discuss
 
   const {
     register,
@@ -81,11 +84,9 @@ export function DiscussScreen() {
             control={control}
           ></Controller>
         </div>
-        <div className='w-[9.1875rem]'>
-          <Button disabled={!isValid} type='submit'>
-            {buttonText}
-          </Button>
-        </div>
+        <Button disabled={!isValid} type='submit'>
+          {buttonText}
+        </Button>
       </form>
     </div>
   )

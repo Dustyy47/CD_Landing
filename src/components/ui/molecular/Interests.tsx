@@ -16,7 +16,7 @@ export function Interests({ interests }: InterestsProps) {
           <div className='md:w-[3.75rem] md:h-[3.75rem] sm:w-[2.75rem] sm:h-[2.75rem] border-[0.125rem] rounded-full flex items-center justify-center border-lavenderPurple md:mr-4 sm:mr-2'>
             <img
               className='md:w-6 md:h-6 sm:w-4 sm:h-4'
-              src={interest.iconSrc}
+              src={'./images/Music.svg'}
               alt={interest.title}
             />
           </div>

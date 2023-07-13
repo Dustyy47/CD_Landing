@@ -1,9 +1,13 @@
+import { useContext } from 'react'
+import { DEFAULT_LANGUAGE, LanguageContext } from '../../App'
 import { screensData } from '../../data/screens'
 import { Link } from '../ui/atomaric/Link'
 import { Article } from '../ui/molecular/Article'
 
 export function MainScreen() {
-  const { title, subtitle, article, buttonText } = screensData.main
+  const ctx = useContext(LanguageContext)
+  const { title, subtitle, article, buttonText } =
+    screensData[ctx?.lang ?? DEFAULT_LANGUAGE].main
 
   return (
     <section
@@ -19,9 +23,7 @@ export function MainScreen() {
           <div className='lg:mb-[3.75rem] md:mb-11 sm:mb-[1.6875rem]'>
             <Article>{article}</Article>
           </div>
-          <div className='md:w-48 sm:w-[8.75rem]'>
-            <Link href='#discuss'>{buttonText}</Link>
-          </div>
+          <Link href='#discuss'>{buttonText}</Link>
         </div>
       </div>
     </section>

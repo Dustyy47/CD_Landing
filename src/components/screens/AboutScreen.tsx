@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { DEFAULT_LANGUAGE, LanguageContext } from '../../App'
 import { screensData } from '../../data/screens'
 import { Link } from '../ui/atomaric/Link'
 import { Article } from '../ui/molecular/Article'
@@ -5,7 +7,9 @@ import { Interests } from '../ui/molecular/Interests'
 import { Story } from '../ui/molecular/Story'
 
 export function AboutScreen() {
-  const { title, article, buttonText, interests, story } = screensData.aboutMe
+  const ctx = useContext(LanguageContext)
+  const { title, article, buttonText, interests, story } =
+    screensData[ctx?.lang ?? DEFAULT_LANGUAGE].aboutMe
 
   return (
     <div id='about' className='container'>
@@ -23,7 +27,7 @@ export function AboutScreen() {
         <div className='md:w-[50%] sm:w-full'>
           <div className='lg:w-[26rem] md:w-auto'>
             <Article>{article}</Article>
-            <div className='w-48 mt-[4rem] md:block sm:hidden'>
+            <div className='mt-[4rem] md:block sm:hidden'>
               <Link href='#discuss'>{buttonText}</Link>
             </div>
           </div>
