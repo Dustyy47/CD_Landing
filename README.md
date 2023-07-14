@@ -1,4 +1,4 @@
-<h1>:technologist: CDG Landing application</h1>
+<h1>:technologist: CDG Academy Landing</h1>
 <p>The first project is written in React.js, during the practice at Crimea Digital</p>
 <p>Live Demo: https://dustyy47.github.io/CD_Landing/</p>
 <h2>General Information</h2>
