@@ -12,6 +12,7 @@ As a user you can switch site language from english to russian and vice versa
    ```git
    git clone https://github.com/Dustyy47/CD_Game.git
    ```
+   
 3. Navigate to the project folder using the cd your-repository command </br>
 4. Install the dependencies using the npm install command </br>
 
